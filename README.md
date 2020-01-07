@@ -75,7 +75,7 @@ This is the port that device name in Linux system, for example the default port 
 
 ## Published Topics
 
-### /imu (sneosr_msgs/Imu)
+### /imu (sensor_msgs/Imu)
 
 The standard ROS imu sensor msg which include orientation by filtered RPY.
 
