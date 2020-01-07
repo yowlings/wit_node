@@ -1,0 +1,2 @@
+add_executable(initialization initialization.cpp)
+target_link_libraries(initialization wit_driver)

@@ -1,0 +1,8 @@
+<library path="lib/libwit_nodelet">
+  <class name="wit_node/WitNodelet" type="wit::WitNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      Nodelet version of the wit node
+    </description>
+  </class>
+</library>
+

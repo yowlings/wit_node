@@ -1,0 +1,7 @@
+<launch>
+  <arg name="port"                  default = "/dev/ttyUSB0" />
+  <node pkg="nodelet" type="nodelet" name="wit_nodelet_manager" args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="wit" args="load wit_node/WitNodelet wit_nodelet_manager" >
+    <param name="port" value="$(arg port)" />
+  </node>
+</launch>
