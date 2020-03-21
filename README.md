@@ -79,13 +79,13 @@ This is the port that device name in Linux system, for example the default port 
 
 The standard ROS imu sensor msg which include orientation by filtered RPY.
 
-### /gps (sensor_msgs/sensor_msgs/NavSatFix)
+### /gps (sensor_msgs/NavSatFix)
 
 The standard ROS gps or navigation satellites msg.
 
 ### /wit/raw_data (wit_node/ImuGpsRaw)
 
-All raw data provided by the wit device, including nine axises data, atmosphere pressure, temperature, latitude,longitude, altitude, satellites number,
+All raw data provided by the wit device, including nine axises data, atmosphere pressure, temperature, latitude,longitude, altitude, satellites number .etc
 
 ### /wit/related_yaw (std_msgs/Float64)
 
