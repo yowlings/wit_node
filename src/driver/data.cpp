@@ -86,9 +86,23 @@ bool Data::desGyro(ecl::PushAndPop<unsigned char> &byteStream) {
     return false;
   }
 }
+
+// Given the measurement as a float (incorrectly), convert it to decimal degrees.
+static float fixBits(float measurement, const char *name) {
+  static const float seven_zeros = 10000000;
+
+  int int_measurement = reinterpret_cast<int&>(measurement);
+  float degrees = int_measurement / seven_zeros;
+  float minutes_and_seconds = (int_measurement % (int)seven_zeros)/seven_zeros;
+  return degrees + minutes_and_seconds*100/60;
+}
+
 bool Data::desLola(ecl::PushAndPop<unsigned char> &byteStream) {
   buildVariable(imugps_.longtitude, byteStream);
   buildVariable(imugps_.latitude, byteStream);
+
+  imugps_.latitude = fixBits(imugps_.latitude, "latitude");
+  imugps_.longtitude = fixBits(imugps_.longtitude, "longitude");
   if (byteStream.size() == 0) {
     //    std::cout << imugps_.pressure << std::endl;
     return true;
