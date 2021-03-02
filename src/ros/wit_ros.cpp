@@ -66,6 +66,7 @@ bool WitRos::update() {
         "Wit : arm serial port is not connetced, please connect the arm.");
     return false;
   }
+  processStreamData();
   return true;
 }
 
