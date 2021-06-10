@@ -71,7 +71,7 @@ class Command : public packet_handler::payloadBase {
           location(2047),
           read_start(0x38),
           read_length(15) {
-      for (int i = 1; i < 13; i++) {
+      for (int i = 0; i < 12; i++) {
         sycn_location[i] = 2047;
       }
     }
