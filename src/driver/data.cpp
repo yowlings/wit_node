@@ -148,7 +148,7 @@ bool Data::desQuat(ecl::PushAndPop<unsigned char> &byteStream) {
   buildVariable(tmp, byteStream);
   imugps_.q[3] = tmp / 32768.0;
   if (byteStream.size() == 0) {
-    std::cout << imugps_.q[0] << std::endl;
+    //    std::cout << imugps_.q[0] << std::endl;
     return true;
   } else {
     return false;
@@ -164,7 +164,7 @@ bool Data::desSate(ecl::PushAndPop<unsigned char> &byteStream) {
   buildVariable(tmp, byteStream);
   imugps_.gpsa[2] = tmp / 100.0;
   if (byteStream.size() == 0) {
-    std::cout << imugps_.gpsa[0] << std::endl;
+    //    std::cout << imugps_.gpsa[0] << std::endl;
     return true;
   } else {
     return false;
@@ -181,7 +181,7 @@ bool Data::desState(ecl::PushAndPop<unsigned char> &byteStream) {
   buildVariable(tmp, byteStream);  // D3
   imugps_.d[3] = tmp;
   if (byteStream.size() == 0) {
-    std::cout << imugps_.d[0] << std::endl;
+    //    std::cout << imugps_.d[0] << std::endl;
     return true;
   } else {
     return false;
@@ -198,7 +198,7 @@ bool Data::desRpy(ecl::PushAndPop<unsigned char> &byteStream) {
   buildVariable(tmp, byteStream);
   imugps_.temperature = tmp / 100.0;
   if (byteStream.size() == 0) {
-    std::cout << imugps_.rpy[0] << std::endl;
+    //    std::cout << imugps_.rpy[0] << std::endl;
     return true;
   } else {
     return false;
@@ -213,7 +213,7 @@ bool Data::desGpsv(ecl::PushAndPop<unsigned char> &byteStream) {
   buildVariable(imugps_.gpsv, byteStream);  // accz
   imugps_.gpsv = imugps_.gpsv / 1000.0;
   if (byteStream.size() == 0) {
-    std::cout << imugps_.gpsv << std::endl;
+    //    std::cout << imugps_.gpsv << std::endl;
     return true;
   } else {
     return false;
