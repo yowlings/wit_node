@@ -107,6 +107,19 @@ void WitRos::processStreamData() {
     imu_msg.orientation = tf::createQuaternionMsgFromRollPitchYaw(
         data.rpy[0], data.rpy[1], data.rpy[2]);
 
+    imu_msg.orientation_covariance =
+    {0.001, 0.0,    0.0,
+     0.0,   0.001,  0.0,
+     0.0,   0.0,    0.001};
+    imu_msg.angular_velocity_covariance =
+    {0.00001, 0.0,      0.0,
+     0.0,     0.00001,  0.0,
+     0.0,     0.0,      0.00001};
+    imu_msg.linear_acceleration_covariance =
+    {0.01,  0.0,  0.0,
+     0.0,   0.01, 0.0,
+     0.0,   0.0,  0.01};
+
     gps_msg.altitude = data.altitude;
     gps_msg.latitude = data.latitude;
     gps_msg.longitude = data.longtitude;
