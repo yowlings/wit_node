@@ -16,11 +16,11 @@ namespace wit {
 bool PacketFinder::checkSum() {
   unsigned int packet_size(buffer.size());
   unsigned char cs(0);
-  for (unsigned int i = 0; i < packet_size - 2; i++) {
+  for (unsigned int i = 0; i < packet_size - 1; i++) {
     cs += buffer[i];
   }
 
-  return (cs == buffer[packet_size - 1]) ? false : true;
+  return (cs == buffer[packet_size - 1]) ? true : false;
 }
 
 WitDriver::WitDriver()
